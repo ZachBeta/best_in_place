@@ -6,7 +6,7 @@ module BestInPlace
         raise ArgumentError, "Can't use both 'display_as' and 'display_with' options at the same time"
       end
 
-      if opts[:display_with] && !opts[:display_with].is_a?(Proc) && !ViewHelpers.respond_to?(opts[:display_with])
+      if opts[:display_with] && !opts[:display_with].is_a?(Proc) && !ApplicationHelpers.respond_to?(opts[:display_with])
         raise ArgumentError, "Can't find helper #{opts[:display_with]}"
       end
 
